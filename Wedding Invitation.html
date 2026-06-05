@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aysha & Munaver | Wedding Celebration</title>
+<!-- Added Playfair Display and Pinyon Script fonts for a more elegant look -->
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@1,500;1,600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cormorant Garamond',serif;background:#f8f4ec;color:#4b3b20;overflow-x:hidden}
+.hero,.invite{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.hero{
+background:linear-gradient(rgba(248,244,236,.92),rgba(248,244,236,.92));
+text-align:center;
+}
+.frame{
+border:3px solid #c9a44c;border-radius:25px;padding:50px 40px;max-width:900px;width:100%;
+background:rgba(255,255,255,.75);backdrop-filter:blur(5px);
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+.subtitle{font-size:2.2rem;letter-spacing:3px;text-transform:uppercase;color:#b08a2d;font-weight:600}
+.btn{
+display:inline-block;margin-top:40px;padding:15px 35px;
+background:#b08a2d;color:#fff;text-decoration:none;border-radius:30px;
+font-size:1.2rem;font-weight:600;transition:all 0.3s ease;
+box-shadow:0 4px 15px rgba(176,138,45,0.3);
+}
+.btn:hover{background:#947324;transform:translateY(-2px)}
+.invite{display:none;text-align:center}
+
+/* Updated Bride & Groom Name Styles for better matching */
+.names{
+font-family: 'Pinyon Script', cursive;
+font-size: 4.8rem;
+color: #b08a2d;
+line-height: 1.1;
+font-weight: 400;
+}
+
+.card{
+background:#fff;border-radius:25px;padding:40px 35px;max-width:650px;width:100%;
+box-shadow:0 10px 30px rgba(0,0,0,.1);border:1px solid #eee;
+}
+.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:30px 0}
+.box{background:#f6efdf;padding:15px;border-radius:15px;min-width:85px;box-shadow:0 4px 10px rgba(0,0,0,0.02)}
+.num{font-size:2rem;font-weight:bold;color:#b08a2d}
+.section-title{font-size:2.2rem;color:#8b6b3f;margin-bottom:15px;font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:1px}
+.location{
+display:inline-block;margin:25px 0;padding:14px 28px;
+background:#b08a2d;color:white;text-decoration:none;border-radius:25px;
+font-weight:600;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(176,138,45,0.2);
+}
+.location:hover{background:#947324;transform:translateY(-2px)}
+.parent-sec{margin:25px 0;line-height:1.6}
+.parent-name{font-size:1.3rem;color:#4b3b20}
+.parent-sub{font-size:0.95rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+.flower{position:fixed;top:-20px;animation:fall linear infinite;color:#d4b15a;user-select:none;pointer-events:none}
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg)}
+}
+@media(max-width:480px){
+.subtitle{font-size:1.8rem}
+.names{font-size:3.8rem}
+.card{padding:25px 15px}
+.box{min-width:70px;padding:10px}
+.num{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<div id="flowers"></div>
+
+<section class="hero" id="home">
+<div class="frame">
+<div class="subtitle">Wedding Invitation</div>
+<a href="#" class="btn" onclick="openInvitation(event)">Open Invitation</a>
+</div>
+</section>
+
+<section class="invite" id="invite">
+<div class="card">
+<div class="section-title">Wedding Celebration</div>
+<div class="names">Aysha Liya</div>
+<p style="font-family:'Playfair Display', serif; font-style: italic; font-size:1.8rem;margin:5px 0;color:#8b6b3f">‌&‌</p>
+<div class="names">Munaver Shameem</div>
+
+<br>
+<h3 style="font-size:1.5rem;letter-spacing:1px;color:#b08a2d">14 June 2026 | 11:00 AM</h3>
+<p style="font-size:1.3rem;margin-top:8px;font-weight:600">VEE PEES AUDITORIUM<br><span style="font-size:1.1rem;font-weight:400;color:#666">Pookkattiri, Malappuram</span></p>
+
+<div class="countdown">
+<div class="box"><div class="num" id="d">0</div><span style="font-size:0.9rem">Days</span></div>
+<div class="box"><div class="num" id="h">0</div><span style="font-size:0.9rem">Hours</span></div>
+<div class="box"><div class="num" id="m">0</div><span style="font-size:0.9rem">Mins</span></div>
+<div class="box"><div class="num" id="s">0</div><span style="font-size:0.9rem">Secs</span></div>
+</div>
+
+<hr style="border:0;border-top:1px solid #eee;margin:20px 0">
+
+<div class="section-title" style="font-size:1.8rem">With Families</div>
+<div class="parent-sec">
+<p class="parent-name"><b>Abdul Gafoor & Rihana</b></p>
+<p class="parent-sub">Parents of Bride</p>
+<p class="parent-name" style="margin-top:10px"><b>Mohideen Kutty & Raseena</b></p>
+<p class="parent-sub">Parents of Groom</p>
+</div>
+
+<a class="location" href="https://maps.app.goo.gl/W1WX5JZrHttVqxWq6" target="_blank">View Location</a>
+
+<p style="font-style:italic;color:#666;font-size:1.1rem;margin-top:10px">With prayers and blessings, we warmly invite you to celebrate our special day.</p>
+</div>
+</section>
+
+<script>
+function openInvitation(e){
+e.preventDefault();
+document.getElementById('home').style.display='none';
+document.getElementById('invite').style.display='flex';
+}
+
+const target = new Date("June 14, 2026 11:00:00").getTime();
+const timer = setInterval(()=>{
+const now=new Date().getTime();
+const diff=target-now;
+
+if(diff <= 0) {
+clearInterval(timer);
+document.getElementById('d').innerHTML=0;
+document.getElementById('h').innerHTML=0;
+document.getElementById('m').innerHTML=0;
+document.getElementById('s').innerHTML=0;
+return;
+}
+
+document.getElementById('d').innerHTML=Math.floor(diff/86400000);
+document.getElementById('h').innerHTML=Math.floor((diff%86400000)/3600000);
+document.getElementById('m').innerHTML=Math.floor((diff%3600000)/60000);
+document.getElementById('s').innerHTML=Math.floor((diff%60000)/1000);
+},1000);
+
+for(let i=0;i<20;i++){
+let f=document.createElement('div');
+f.className='flower';
+f.innerHTML='❀';
+f.style.left=Math.random()*100+'vw';
+f.style.animationDuration=(5+Math.random()*10)+'s';
+document.body.appendChild(f);
+}
+</script>
+</body>
+</html>
